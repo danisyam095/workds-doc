@@ -1,0 +1,116 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { min-width: 320px; }
+body { min-width: 320px; overflow-x: hidden; }
+
+@layer components {
+  .prose-doc h1 {
+    @apply mb-7 text-[27px] font-bold leading-tight tracking-[-.04em] text-foreground sm:text-[44px];
+  }
+  .prose-doc h2 {
+    @apply mb-4 mt-10 border-b border-border pb-2 text-[21px] font-semibold text-foreground sm:mt-[50px] sm:text-2xl;
+  }
+  .prose-doc h3 { @apply mb-3 mt-8 text-lg font-semibold text-foreground; }
+  .prose-doc p, .prose-doc li { @apply text-sm leading-7 text-muted-foreground sm:text-[15px] sm:leading-7; }
+  .prose-doc ul, .prose-doc ol { @apply pl-6; }
+  .prose-doc li { @apply my-1; }
+  .prose-doc strong { @apply text-foreground; }
+  .prose-doc blockquote { @apply my-6 border-l-[3px] border-primary px-5 py-1 text-muted-foreground; }
+  .prose-doc code { @apply rounded bg-muted px-1.5 py-0.5 text-[.88em] text-foreground; }
+  .prose-doc pre { @apply my-5 overflow-auto rounded-lg border border-border bg-muted p-3 text-xs sm:p-[18px] sm:text-sm; }
+  .prose-doc pre code { @apply bg-transparent p-0 text-foreground; }
+  .prose-doc table { @apply my-5 block max-w-full overflow-x-auto border-collapse text-xs sm:text-sm; }
+  .prose-doc th, .prose-doc td { @apply border border-border px-3 py-2 text-left; }
+  .prose-doc th { @apply bg-muted text-foreground; }
+  .prose-doc td { @apply text-muted-foreground; }
+  .prose-doc hr { @apply my-9 border-0 border-t border-border; }
+  .prose-doc a { @apply text-primary underline decoration-primary underline-offset-2 hover:decoration-primary; }
+}
+
+@layer base {
+  .theme {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+  }
+  :root {
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.625rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+  }
+  .dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+  }
+  * {
+    @apply border-border outline-ring;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
